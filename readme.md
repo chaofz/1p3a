@@ -13,6 +13,7 @@
 * Tools Level
   * Migrate 到 webpack 4
   * 添加 coding style 检测 tool
+  * 更新 outdated NPM packages
 * Unit Tests
   * 添加 unit test framework
   * 任何新function都要加unit test
@@ -39,6 +40,6 @@
   * 去除我copy/paste的代码
   * 重构大部分 componments
 
-Crawler
+### Crawler
 * 一亩三分地已经部分改版，需要改下爬虫
 * 爬评论 
