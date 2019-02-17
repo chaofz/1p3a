@@ -1,3 +1,12 @@
+## 简介
+项目主要目的是提高一亩三分地使用体验，欢迎大家发PR，丰富并modernize这个repo。
+
+## 声明
+所爬内容所有权为一亩三分地所有。
+
+## Demo
+http://app.chaofz.me/
+
 ## TODOs
 
 ### Infrastucture
@@ -28,6 +37,7 @@
 * App level
   * 添加用户管理功能和personal settings
       * 持久化bookmarks
+  * 若加入用户管理，需要转为HTTPS
 
 ### Frontend
 * Language Level
