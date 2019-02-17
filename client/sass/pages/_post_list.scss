@@ -1,0 +1,115 @@
+.project-list {
+  margin: 0 auto;
+  position: relative;
+
+  .projects {
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 10px;
+      color: #3b5998;
+    }
+
+    .next-page-bar {
+      border: 1px black solid;
+    }
+
+    .project {
+      background: white;
+      display: block;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.05);
+      -webkit-transition: border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      transition: border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 8px 15px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+      }
+      &:visited {
+        color: #8a8a8a;
+      }
+
+      .project-thumb {
+        width: 100%;
+        padding-bottom: 75%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 0;
+      }
+      .text-description {
+        padding: 0 15px;
+        min-height: 83px;
+        line-height: 1.4;
+        @media (min-width: $desktop-width) {
+          font-size: 19px;
+          line-height: 1.5;
+        }
+        h3 {
+          padding: 12px 0 10px 0;
+          font-size: 17px;
+          font-weight: 400;
+          margin: 0;
+          .date {
+            font-size: 16px;
+            float: right;
+          }
+          i {
+            &.star {
+              color: $red-theme;
+            }
+            padding: 0 10px;
+            float: right;
+          }
+        }
+        .tags {
+          font-size: 14px;
+          li {
+            user-select: none;
+            padding: 1px 0;
+            color: white;
+            font-weight: 400;
+            display: inline-block;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+            &:first-child {
+              margin-left: 0;
+              padding-left: 0;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+          .company-name {
+            color: $theme-primary;
+          }
+          .job-field {
+            color: #e59a5c;
+          }
+          .job-type {
+            color: #9882ac;
+          }
+          .job-source {
+            color:	#196ba0;
+          }
+          .seek-time {
+            color:	#f37735;
+          }
+          .fresh-or-switch {
+            color:	#559e83;
+          }
+          .interview-result {
+            color: #4cd550;
+          }
+          .views {
+            float: right;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+

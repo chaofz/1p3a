@@ -1,0 +1,256 @@
+@import "normalize";
+@import "variables";
+@import "global";
+@import "responsive";
+@import "reusable";
+@import "pages/navbar";
+@import "pages/settings";
+@import "pages/dashboard";
+@import "pages/post_list";
+@import "pages/post_page";
+@import "pages/users";
+@import "pages/search";
+@import "pages/simple_pages";
+
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#main {
+  .tag {
+    font-size: 13px;
+    padding: 1px 4px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.selected {
+      color: white;
+      font-weight: 400;
+      border: 1px solid #4688b3;
+      background-color: #4688b3;
+    }
+  }
+  .filter-area {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: $filter-width;
+    box-sizing: border-box;
+    bottom: 0;
+    padding: 30px 30px;
+    //margin: 0 10px 30px 10px;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.05);
+
+    .site-head {
+      font-size: 28px;
+      color: $blue-theme;
+    }
+    .space {
+      margin-bottom: 5px;
+    }
+
+    .category-name {
+      margin-right: 15px;
+    }
+    #company, #seekTime {
+      margin-bottom: 12px;
+    }
+    form{
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    #companyInput {
+      display: inline-block;
+      padding: 12px 5px;
+      width: 118px;
+      font-size: 14px;
+      height: 22px;
+    }
+    #searchQueryInput {
+      display: block;
+      padding: 12px 5px;
+      margin-top: 5px;
+      width: 198px;
+      font-size: 14px;
+      height: 22px;
+    }
+    .category {
+      user-select: none;
+      margin-bottom: 2px;
+    }
+    .row .category {
+      margin-right: 40px;
+    }
+
+  }
+
+  .right-panel {
+    z-index: 0;
+    position: relative;
+    padding-left: $filter-width;
+
+    .filters-row {
+      margin: 0 15px 12px 15px;
+      .tag {
+        margin-bottom: 0;
+        cursor: auto;
+      }
+      .col-head {
+        font-size: 16px;
+        font-weight: 400;
+        margin-right: 32px;
+        margin-bottom: 2px;
+      }
+
+      .companyName.selected {
+        border: 1px solid $theme-primary;
+        background-color: $theme-primary;
+      }
+      .jobField.selected {
+        border: 1px solid #e59a5c;
+        background-color: #e59a5c;
+      }
+      .jobType.selected {
+        border: 1px solid #9882ac;
+        background-color: #9882ac;
+      }
+      .interviewType.selected {
+        border: 1px solid #196ba0;
+        background-color: #196ba0;
+      }
+      .seekTime.selected {
+        border: 1px solid #f37735;
+        background-color: #f37735;
+      }
+      .interviewResult.selected {
+        border: 1px solid #4cd550;
+        background-color: #4cd550;
+      }
+      .order.selected {
+        border: 1px solid #9882ac;
+        background-color: #9882ac;
+      }
+    }
+    .list {
+      padding-top: 35px;
+      margin: 0 40px;
+      min-height: 60vh;
+      position: relative;
+    }
+    .pagination {
+      margin-top: 30px;
+      li {
+        //display: inline-block;
+      }
+      //.page-list {
+      //  display: inline-block;
+      //  vertical-align: bottom;
+      //  line-height: 28px;
+      li {
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: 400;
+        display: inline-block;
+        vertical-align: top;
+
+        margin: 0 4px;
+        border: 1px solid transparent;
+        &:hover {
+          font-weight: 400;
+          outline: none;
+          border: 1px solid $theme-blue;
+          border-radius: 3px;
+        }
+        &.active {
+          border: 1px solid $theme-blue;
+          border-radius: 3px;
+        }
+        &.previous, &.next {
+          &:hover {
+            border: 1px solid transparent;
+          }
+          i {
+            border: 1px solid transparent;
+            &:hover {
+              border: 1px solid $theme-blue;
+              border-radius: 3px;
+            }
+          }
+        }
+        &.previous {
+          float: left;
+        }
+        &.next {
+          float: right;
+        }
+        a {
+          padding: 0 5px;
+          &:hover {
+            text-decoration: none;
+            font-weight: 400;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .rank-link {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    a {
+      &:hover {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+select {
+  height: 21px;
+  vertical-align: bottom;
+  &:focus {
+    outline: none;
+  }
+}
+
+.not-found, .logout {
+  p.title {
+    color: #353535;
+    font-size: 2.5em;
+    padding-left: 30px;
+  }
+}
+
+hr {
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+
+#footer {
+  margin-top: 60px;
+  .copy-right {
+    margin: 0 40px;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-bottom: 40px;
+  }
+}
+

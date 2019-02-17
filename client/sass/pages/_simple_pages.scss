@@ -1,0 +1,34 @@
+#release-note {
+  .inner {
+    margin: auto;
+    @media (min-width: $tablet-land-width) {
+      margin: 20px auto;
+    }
+  }
+  h1 {
+    margin-bottom: 25px;
+  }
+  h2 {
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $border-gray;
+  }
+  h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: unset;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    li {
+      padding: 2px 0;
+      font-size: 17px;
+    }
+  }
+}
+
+#about {
+
+}

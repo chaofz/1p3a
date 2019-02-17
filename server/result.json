@@ -1,0 +1,1006 @@
+MongoDB shell version v3.4.9
+connecting to: mongodb://127.0.0.1:27017/onePoint3Acres
+MongoDB server version: 3.4.9
+[
+	{
+		"_id" : "amazon",
+		"count" : 399
+	},
+	{
+		"_id" : "google",
+		"count" : 304
+	},
+	{
+		"_id" : "facebook",
+		"count" : 275
+	},
+	{
+		"_id" : "bloomberg",
+		"count" : 123
+	},
+	{
+		"_id" : "microsoft",
+		"count" : 118
+	},
+	{
+		"_id" : "linkedin",
+		"count" : 87
+	},
+	{
+		"_id" : "uber",
+		"count" : 52
+	},
+	{
+		"_id" : "snapchat",
+		"count" : 52
+	},
+	{
+		"_id" : "yahoo",
+		"count" : 46
+	},
+	{
+		"_id" : "airbnb",
+		"count" : 38
+	},
+	{
+		"_id" : "yelp",
+		"count" : 33
+	},
+	{
+		"_id" : "dropbox",
+		"count" : 23
+	},
+	{
+		"_id" : "twosigma",
+		"count" : 21
+	},
+	{
+		"_id" : "vmware",
+		"count" : 17
+	},
+	{
+		"_id" : "purestorage",
+		"count" : 17
+	},
+	{
+		"_id" : "apple",
+		"count" : 17
+	},
+	{
+		"_id" : "",
+		"count" : 16
+	},
+	{
+		"_id" : "indeed",
+		"count" : 15
+	},
+	{
+		"_id" : "poketgem",
+		"count" : 14
+	},
+	{
+		"_id" : "coursera",
+		"count" : 13
+	},
+	{
+		"_id" : "oracle",
+		"count" : 13
+	},
+	{
+		"_id" : "expedia",
+		"count" : 13
+	},
+	{
+		"_id" : "akunacapital",
+		"count" : 12
+	},
+	{
+		"_id" : "twitter",
+		"count" : 9
+	},
+	{
+		"_id" : "goldmansachs",
+		"count" : 9
+	},
+	{
+		"_id" : "cisco",
+		"count" : 8
+	},
+	{
+		"_id" : "ebay",
+		"count" : 8
+	},
+	{
+		"_id" : "jet.com",
+		"count" : 7
+	},
+	{
+		"_id" : "paypal",
+		"count" : 7
+	},
+	{
+		"_id" : "jet",
+		"count" : 7
+	},
+	{
+		"_id" : "thumbtack",
+		"count" : 7
+	},
+	{
+		"_id" : "salesforce",
+		"count" : 6
+	},
+	{
+		"_id" : "zillow",
+		"count" : 6
+	},
+	{
+		"_id" : "wish",
+		"count" : 6
+	},
+	{
+		"_id" : "tripadvisor",
+		"count" : 6
+	},
+	{
+		"_id" : "palantir",
+		"count" : 6
+	},
+	{
+		"_id" : "creditkarma",
+		"count" : 5
+	},
+	{
+		"_id" : "rubrik",
+		"count" : 5
+	},
+	{
+		"_id" : "factset",
+		"count" : 5
+	},
+	{
+		"_id" : "zenefits",
+		"count" : 5
+	},
+	{
+		"_id" : "houzz",
+		"count" : 5
+	},
+	{
+		"_id" : "ixl",
+		"count" : 4
+	},
+	{
+		"_id" : "quantcast",
+		"count" : 4
+	},
+	{
+		"_id" : "lyft",
+		"count" : 4
+	},
+	{
+		"_id" : "citadel",
+		"count" : 4
+	},
+	{
+		"_id" : "redfin",
+		"count" : 4
+	},
+	{
+		"_id" : "morganstanley",
+		"count" : 4
+	},
+	{
+		"_id" : "interactivebrokers",
+		"count" : 3
+	},
+	{
+		"_id" : "intel",
+		"count" : 3
+	},
+	{
+		"_id" : "stripe",
+		"count" : 3
+	},
+	{
+		"_id" : "visa",
+		"count" : 3
+	},
+	{
+		"_id" : "ibm",
+		"count" : 3
+	},
+	{
+		"_id" : "square",
+		"count" : 3
+	},
+	{
+		"_id" : "tableau",
+		"count" : 3
+	},
+	{
+		"_id" : "coupang",
+		"count" : 3
+	},
+	{
+		"_id" : "lendingclub",
+		"count" : 3
+	},
+	{
+		"_id" : "drive.ai",
+		"count" : 3
+	},
+	{
+		"_id" : "ixllearning",
+		"count" : 3
+	},
+	{
+		"_id" : "arista",
+		"count" : 3
+	},
+	{
+		"_id" : "blackrock",
+		"count" : 3
+	},
+	{
+		"_id" : "morningstar",
+		"count" : 3
+	},
+	{
+		"_id" : "doordash",
+		"count" : 3
+	},
+	{
+		"_id" : "cloudera",
+		"count" : 2
+	},
+	{
+		"_id" : "revvel(verizon子公司)",
+		"count" : 2
+	},
+	{
+		"_id" : "jpmorgan",
+		"count" : 2
+	},
+	{
+		"_id" : "baiduusa",
+		"count" : 2
+	},
+	{
+		"_id" : "groupon",
+		"count" : 2
+	},
+	{
+		"_id" : "thousandeyes",
+		"count" : 2
+	},
+	{
+		"_id" : "triplebyte",
+		"count" : 2
+	},
+	{
+		"_id" : "hitachi",
+		"count" : 2
+	},
+	{
+		"_id" : "hitachidatasystem",
+		"count" : 2
+	},
+	{
+		"_id" : "ea",
+		"count" : 2
+	},
+	{
+		"_id" : "servicenow",
+		"count" : 2
+	},
+	{
+		"_id" : "杰特",
+		"count" : 2
+	},
+	{
+		"_id" : "capitalone",
+		"count" : 2
+	},
+	{
+		"_id" : "wayfair",
+		"count" : 2
+	},
+	{
+		"_id" : "grubhub",
+		"count" : 2
+	},
+	{
+		"_id" : "offerup",
+		"count" : 2
+	},
+	{
+		"_id" : "cerner",
+		"count" : 2
+	},
+	{
+		"_id" : "walmartlab",
+		"count" : 2
+	},
+	{
+		"_id" : "pinterest",
+		"count" : 2
+	},
+	{
+		"_id" : "ziprecruiter",
+		"count" : 2
+	},
+	{
+		"_id" : "wepay",
+		"count" : 2
+	},
+	{
+		"_id" : "quora",
+		"count" : 2
+	},
+	{
+		"_id" : "electronicarts",
+		"count" : 2
+	},
+	{
+		"_id" : "audible",
+		"count" : 2
+	},
+	{
+		"_id" : "tinder",
+		"count" : 2
+	},
+	{
+		"_id" : "booking.com",
+		"count" : 2
+	},
+	{
+		"_id" : "marketo",
+		"count" : 2
+	},
+	{
+		"_id" : "box",
+		"count" : 2
+	},
+	{
+		"_id" : "samsung",
+		"count" : 2
+	},
+	{
+		"_id" : "addepar",
+		"count" : 2
+	},
+	{
+		"_id" : "intersystems",
+		"count" : 2
+	},
+	{
+		"_id" : "fitbit",
+		"count" : 2
+	},
+	{
+		"_id" : "intuit",
+		"count" : 1
+	},
+	{
+		"_id" : "futureadvisor",
+		"count" : 1
+	},
+	{
+		"_id" : "lineartech",
+		"count" : 1
+	},
+	{
+		"_id" : "roblox",
+		"count" : 1
+	},
+	{
+		"_id" : "jpmc",
+		"count" : 1
+	},
+	{
+		"_id" : "workday",
+		"count" : 1
+	},
+	{
+		"_id" : "opendoor",
+		"count" : 1
+	},
+	{
+		"_id" : "zipongo",
+		"count" : 1
+	},
+	{
+		"_id" : "好几家一起",
+		"count" : 1
+	},
+	{
+		"_id" : "plexchat",
+		"count" : 1
+	},
+	{
+		"_id" : "sumitomomitsuibankingcorporation",
+		"count" : 1
+	},
+	{
+		"_id" : "storm8",
+		"count" : 1
+	},
+	{
+		"_id" : "gehealthcare",
+		"count" : 1
+	},
+	{
+		"_id" : "nvidia",
+		"count" : 1
+	},
+	{
+		"_id" : "coursehero",
+		"count" : 1
+	},
+	{
+		"_id" : "snapchatsnapchatonsite4轮挂经>.<",
+		"count" : 1
+	},
+	{
+		"_id" : "mathworks",
+		"count" : 1
+	},
+	{
+		"_id" : "orbitalinsight",
+		"count" : 1
+	},
+	{
+		"_id" : "slice",
+		"count" : 1
+	},
+	{
+		"_id" : "bidgely",
+		"count" : 1
+	},
+	{
+		"_id" : "malabs",
+		"count" : 1
+	},
+	{
+		"_id" : "dealer.com",
+		"count" : 1
+	},
+	{
+		"_id" : "ciscomeraki",
+		"count" : 1
+	},
+	{
+		"_id" : "乐视",
+		"count" : 1
+	},
+	{
+		"_id" : "draftkings",
+		"count" : 1
+	},
+	{
+		"_id" : "godaddy",
+		"count" : 1
+	},
+	{
+		"_id" : "whatsapp",
+		"count" : 1
+	},
+	{
+		"_id" : "airbnbcoursera,houzz",
+		"count" : 1
+	},
+	{
+		"_id" : "yext",
+		"count" : 1
+	},
+	{
+		"_id" : "criteo",
+		"count" : 1
+	},
+	{
+		"_id" : "nextjump",
+		"count" : 1
+	},
+	{
+		"_id" : "indeed东京",
+		"count" : 1
+	},
+	{
+		"_id" : "facebookfacebookproductionengineertestremoteservers",
+		"count" : 1
+	},
+	{
+		"_id" : "twitch,quora,airbnb,fb,linkedin,google,upstart,essentialproducts,drive.ai",
+		"count" : 1
+	},
+	{
+		"_id" : "creditsuisse",
+		"count" : 1
+	},
+	{
+		"_id" : "netsuite",
+		"count" : 1
+	},
+	{
+		"_id" : "servicenowonsitekirkland",
+		"count" : 1
+	},
+	{
+		"_id" : "ciscocisco,juniper,intel,qualcomm,texasinstruments",
+		"count" : 1
+	},
+	{
+		"_id" : "amazonibm",
+		"count" : 1
+	},
+	{
+		"_id" : "janestreet",
+		"count" : 1
+	},
+	{
+		"_id" : "leeco",
+		"count" : 1
+	},
+	{
+		"_id" : "microchips",
+		"count" : 1
+	},
+	{
+		"_id" : "amazon亚麻纽约",
+		"count" : 1
+	},
+	{
+		"_id" : "deshaw",
+		"count" : 1
+	},
+	{
+		"_id" : "高盛,大摩,br",
+		"count" : 1
+	},
+	{
+		"_id" : "snowflakescomputing",
+		"count" : 1
+	},
+	{
+		"_id" : "aqrcapital",
+		"count" : 1
+	},
+	{
+		"_id" : "gigster",
+		"count" : 1
+	},
+	{
+		"_id" : "blendlabs",
+		"count" : 1
+	},
+	{
+		"_id" : "别猜了，不会告诉你们的",
+		"count" : 1
+	},
+	{
+		"_id" : "hedvig",
+		"count" : 1
+	},
+	{
+		"_id" : "aqr",
+		"count" : 1
+	},
+	{
+		"_id" : "dataminr",
+		"count" : 1
+	},
+	{
+		"_id" : "laserfiche",
+		"count" : 1
+	},
+	{
+		"_id" : "musicaudienceexchange",
+		"count" : 1
+	},
+	{
+		"_id" : "tinyco",
+		"count" : 1
+	},
+	{
+		"_id" : "hired",
+		"count" : 1
+	},
+	{
+		"_id" : "googlefacebook,linkedin,snapchat，amazon",
+		"count" : 1
+	},
+	{
+		"_id" : "锕马粽",
+		"count" : 1
+	},
+	{
+		"_id" : "springpath",
+		"count" : 1
+	},
+	{
+		"_id" : "ｚｉｐｒｅｃｒｕｉｔｅｒ",
+		"count" : 1
+	},
+	{
+		"_id" : "sap",
+		"count" : 1
+	},
+	{
+		"_id" : "turn",
+		"count" : 1
+	},
+	{
+		"_id" : "rallyhealth",
+		"count" : 1
+	},
+	{
+		"_id" : "cccis",
+		"count" : 1
+	},
+	{
+		"_id" : "sony",
+		"count" : 1
+	},
+	{
+		"_id" : "kcg(capitalknight)",
+		"count" : 1
+	},
+	{
+		"_id" : "highfive",
+		"count" : 1
+	},
+	{
+		"_id" : "imo.im",
+		"count" : 1
+	},
+	{
+		"_id" : "noname",
+		"count" : 1
+	},
+	{
+		"_id" : "memsql",
+		"count" : 1
+	},
+	{
+		"_id" : "oraclefacrual",
+		"count" : 1
+	},
+	{
+		"_id" : "hulu",
+		"count" : 1
+	},
+	{
+		"_id" : "ernst&young(ey)",
+		"count" : 1
+	},
+	{
+		"_id" : "brightedge",
+		"count" : 1
+	},
+	{
+		"_id" : "hudsonrivertrading",
+		"count" : 1
+	},
+	{
+		"_id" : "cohesity",
+		"count" : 1
+	},
+	{
+		"_id" : "expertslab",
+		"count" : 1
+	},
+	{
+		"_id" : "wabtec",
+		"count" : 1
+	},
+	{
+		"_id" : "splunk",
+		"count" : 1
+	},
+	{
+		"_id" : "turbonomic",
+		"count" : 1
+	},
+	{
+		"_id" : "skyworks",
+		"count" : 1
+	},
+	{
+		"_id" : "adroll",
+		"count" : 1
+	},
+	{
+		"_id" : "amazonamazoninterviewtype",
+		"count" : 1
+	},
+	{
+		"_id" : "mckinsey",
+		"count" : 1
+	},
+	{
+		"_id" : "quip",
+		"count" : 1
+	},
+	{
+		"_id" : "goldman",
+		"count" : 1
+	},
+	{
+		"_id" : "sqaurespace",
+		"count" : 1
+	},
+	{
+		"_id" : "spotify",
+		"count" : 1
+	},
+	{
+		"_id" : "drawbridge",
+		"count" : 1
+	},
+	{
+		"_id" : "twitch",
+		"count" : 1
+	},
+	{
+		"_id" : "unity",
+		"count" : 1
+	},
+	{
+		"_id" : "mulesoft",
+		"count" : 1
+	},
+	{
+		"_id" : "priceline",
+		"count" : 1
+	},
+	{
+		"_id" : "qualtrics",
+		"count" : 1
+	},
+	{
+		"_id" : "poynt",
+		"count" : 1
+	},
+	{
+		"_id" : "google,linkedin",
+		"count" : 1
+	},
+	{
+		"_id" : "hudsonriver",
+		"count" : 1
+	},
+	{
+		"_id" : "fortinet",
+		"count" : 1
+	},
+	{
+		"_id" : "towerresearchcapital",
+		"count" : 1
+	},
+	{
+		"_id" : "qualcomm",
+		"count" : 1
+	},
+	{
+		"_id" : "dropbox字典里的词最小长度是3",
+		"count" : 1
+	},
+	{
+		"_id" : "amazonno",
+		"count" : 1
+	},
+	{
+		"_id" : "appdynamics",
+		"count" : 1
+	},
+	{
+		"_id" : "googlegoogle",
+		"count" : 1
+	},
+	{
+		"_id" : "liveramp",
+		"count" : 1
+	},
+	{
+		"_id" : "applovin",
+		"count" : 1
+	},
+	{
+		"_id" : "localsmallcompany",
+		"count" : 1
+	},
+	{
+		"_id" : "qualtircs",
+		"count" : 1
+	},
+	{
+		"_id" : "apartmentlist",
+		"count" : 1
+	},
+	{
+		"_id" : "yahoo,amazon,bloomberg,c3",
+		"count" : 1
+	},
+	{
+		"_id" : "googlems,uber",
+		"count" : 1
+	},
+	{
+		"_id" : "mentorgraphics",
+		"count" : 1
+	},
+	{
+		"_id" : "vmwareairwatch",
+		"count" : 1
+	},
+	{
+		"_id" : "yelp+sap+amazon",
+		"count" : 1
+	},
+	{
+		"_id" : "blend",
+		"count" : 1
+	},
+	{
+		"_id" : "atlassian",
+		"count" : 1
+	},
+	{
+		"_id" : "amazonaudible",
+		"count" : 1
+	},
+	{
+		"_id" : "akuna",
+		"count" : 1
+	},
+	{
+		"_id" : "amazon吖麻",
+		"count" : 1
+	},
+	{
+		"_id" : "amazon亚麻",
+		"count" : 1
+	},
+	{
+		"_id" : "capital1",
+		"count" : 1
+	},
+	{
+		"_id" : "snowflakecomputing",
+		"count" : 1
+	},
+	{
+		"_id" : "udacity",
+		"count" : 1
+	},
+	{
+		"_id" : "amazon,google,snapchat,bloomberg",
+		"count" : 1
+	},
+	{
+		"_id" : "fxxxx",
+		"count" : 1
+	},
+	{
+		"_id" : "a逗逼dobe",
+		"count" : 1
+	},
+	{
+		"_id" : "tesla,fb,nimblestorage,playstation,okta",
+		"count" : 1
+	},
+	{
+		"_id" : "clari",
+		"count" : 1
+	},
+	{
+		"_id" : "br",
+		"count" : 1
+	},
+	{
+		"_id" : "goldmensachs",
+		"count" : 1
+	},
+	{
+		"_id" : "bloombergcmegroup",
+		"count" : 1
+	},
+	{
+		"_id" : "c3iot",
+		"count" : 1
+	},
+	{
+		"_id" : "fca",
+		"count" : 1
+	},
+	{
+		"_id" : "samsungresearchamerica",
+		"count" : 1
+	},
+	{
+		"_id" : "symantec",
+		"count" : 1
+	},
+	{
+		"_id" : "鸭蹼",
+		"count" : 1
+	},
+	{
+		"_id" : "walmartlabs",
+		"count" : 1
+	},
+	{
+		"_id" : "kcgholdings",
+		"count" : 1
+	},
+	{
+		"_id" : "other",
+		"count" : 1
+	},
+	{
+		"_id" : "imc",
+		"count" : 1
+	},
+	{
+		"_id" : "三星",
+		"count" : 1
+	},
+	{
+		"_id" : "sumologic",
+		"count" : 1
+	},
+	{
+		"_id" : "baidu",
+		"count" : 1
+	},
+	{
+		"_id" : "yelp,palantir,workday,facebook",
+		"count" : 1
+	},
+	{
+		"_id" : "脸熟",
+		"count" : 1
+	},
+	{
+		"_id" : "bina",
+		"count" : 1
+	},
+	{
+		"_id" : "squarespace",
+		"count" : 1
+	},
+	{
+		"_id" : "signac",
+		"count" : 1
+	},
+	{
+		"_id" : "microsoftbloomberg,google,towerresearchcapital",
+		"count" : 1
+	},
+	{
+		"_id" : "plato",
+		"count" : 1
+	},
+	{
+		"_id" : "cypresssemiconductor",
+		"count" : 1
+	},
+	{
+		"_id" : "jpmorganchase",
+		"count" : 1
+	},
+	{
+		"_id" : "snapchatsnapchat",
+		"count" : 1
+	},
+	{
+		"_id" : "xad",
+		"count" : 1
+	},
+	{
+		"_id" : "googlesumologic",
+		"count" : 1
+	}
+]
+bye

@@ -1,0 +1,7 @@
+client/public
+client/node_modules
+client/.idea
+server/node_modules
+server/.idea
+server/ssl
+crawler/__pycache__

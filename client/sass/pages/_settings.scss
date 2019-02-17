@@ -1,0 +1,89 @@
+#settings {
+
+  .left-panel {
+    margin-bottom: 10px;
+    a {
+      display: block;
+      font-size: 18px;
+      padding: 20px 0 20px 30px;
+      text-decoration: none;
+      border-left: 4px solid transparent;
+      &:hover {
+        background: #fafafa;
+      }
+      &.active {
+        font-weight: 400;
+        border-left: 4px solid #5185b5;
+      }
+    }
+  }
+  .right-panel {
+    > div {
+      @media (min-width: $tablet-port-width) {
+        padding: 10px 30px;
+      }
+      border-radius: 3px;
+      min-height: 200px;
+      //border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .reconfirm {
+      width: auto;
+      cursor: pointer;
+    }
+
+    .label {
+      font-weight: 400;
+      padding-right: 30px;
+    }
+    table {
+      td {
+        padding: 15px 5px;
+      }
+    }
+    span {
+      margin-left: 5px;
+    }
+
+    .notification {
+      select {
+        display: inline-block;
+        width: 160px;
+        height: 30px;
+        font-size: 14px;
+        background: #fff;
+        line-height: 16px;
+        margin-bottom: 15px;
+        outline: none;
+        border: 1px solid #5185b5;
+        -webkit-appearance: menulist-button;
+      }
+      span.msg {
+        color: #3b5998;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .local {
+    .email-confirm {
+      margin: 10px 0 20px;
+    }
+
+    .delete-user {
+      .modal-btn-group {
+        padding-top: 60px;
+      }
+    }
+    .delete-user {
+      .modal-title {
+        font-size: 1.8em;
+      }
+      .modal-btn-group, .modal-one-btn {
+        padding-top: 60px;
+      }
+    }
+  }
+}
+
+
