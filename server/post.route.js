@@ -120,7 +120,7 @@ function changeBookmark(req, res) {
 }
 
 function showSortedPage(req, res) {
-  let {order, page, summary, searchQuery} = req.query;
+  let {order, page, summary, searchQuery, postType, companyName} = req.query;
   req.query.order = undefined;
   req.query.page = undefined;
   req.query.clientID = undefined;
@@ -132,6 +132,11 @@ function showSortedPage(req, res) {
 
   if (summary)
     req.query['title'] = /.*总结|汇总|整理.*/;
+
+  if (postType !== 'interview experience') {
+    req.query.freshOrSwitch = undefined;
+    req.query.jobType = undefined;
+  }
 
   if(searchQuery)
     req.query.$text = {$search: '"' + searchQuery + '"'};

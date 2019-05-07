@@ -55,7 +55,7 @@ export default class PostList extends React.Component {
             const starType = bookmarks.includes(post._id) ? 'star' : 'star_border';
             const action = starType === 'star' ? 'remove' : 'add';
             return (<li className="pm12">
-                <Link className="project" to={`/posts/${post.tid}`}>
+                <a className="project" href={post.sourceUrl} target="_blank">
                   <div className="text-description">
                     <h3>
                       {post.title}
@@ -77,7 +77,7 @@ export default class PostList extends React.Component {
                       {/*<span className="views">{post.views} views</span>*/}
                     {/*</ul>*/}
                   </div>
-                </Link>
+                </a>
               </li>);
             }
           )}

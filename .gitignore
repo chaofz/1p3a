@@ -5,3 +5,5 @@ server/node_modules
 server/.idea
 server/ssl
 crawler/__pycache__
+crawler/*.pyc
+.idea

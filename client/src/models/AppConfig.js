@@ -26,6 +26,13 @@ const AppConfig = {
     requestText: 'Requesting..',
   },
 
+  postTypes: [
+    'interview experience',
+    'package',
+    'referral',
+    'inside',
+  ],
+
   companyOptions: [
     'All',
     'Amazon',

@@ -8,6 +8,7 @@ import AppConfig from '../../models/AppConfig';
 import {Link} from "react-router";
 
 const companyOptions = AppConfig.companyOptions;
+const postTypes = AppConfig.postTypes;
 
 export default class MainApp extends React.Component {
 
@@ -94,9 +95,14 @@ export default class MainApp extends React.Component {
     }
   }
 
-  handleChange(e) {
+  handleCompanyNameChange(e) {
     if (e.target.value !== '请选择')
       this.onTagClick('companyName', e.target.value);
+  }
+
+  handlePostTypeChange(e) {
+    if (e.target.value !== '请选择')
+      this.onTagClick('postType', e.target.value);
   }
 
   handleSeekTimeChange(e) {
@@ -156,9 +162,15 @@ export default class MainApp extends React.Component {
       <div id="main" onClick={this.onGlobalClick.bind(this)}>
         <div className="filter-area">
           <h2 className="site-head">1p3a</h2>
+          <div className="category" id="postType">
+            <span className="category-name">论坛版块</span>
+            <select value={this.state.value} onChange={this.handlePostTypeChange.bind(this)}>
+              {postTypes.map(postType => <option value={postType}>{postType}</option>)}
+            </select>
+          </div>
           <div className="category" id="company">
             <span className="category-name">公司名称</span>
-            <select value={this.state.value} onChange={this.handleChange.bind(this)}>
+            <select value={this.state.value} onChange={this.handleCompanyNameChange.bind(this)}>
               {companyOptions.map(company => <option value={company}>{company}</option>)}
             </select>
           </div>

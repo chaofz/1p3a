@@ -5,21 +5,20 @@ from threading import Timer
 
 MOBILE_PAGE_URL = 'http://www.1point3acres.com/bbs/forum.php?mod=viewthread&mobile=1'
 
-instance = OnePointThreeAcres();
+instance = OnePointThreeAcres()
 
 def full_base_setup(): # just run once
   print("Starting full base-term setup")
-  instance.task_list_pages(390)
-  instance.task_content_pages(390)
+  instance.run_task_list_pages(390)
+  instance.run_task_content_pages(390)
 
 def short_base_setup(): # just run once
   print("Starting short base-term setup")
-  instance.task_list_pages(100)
-  instance.task_content_pages(100)
+  instance.run_task_list_pages(100)
+  instance.run_task_content_pages(100)
 
 def short_task():
-  instance.task_list_pages(1)
-  instance.task_content_pages(1)
+  instance.run_task_list_pages(5)
 
 def short_cycle():
   print("Starting short-term updating")
@@ -28,8 +27,8 @@ def short_cycle():
 
 def median_cycle():
   print("Starting median-term updating")
-  instance.task_list_pages(5)
-  instance.task_content_pages(5)
+  instance.run_task_list_pages(5)
+  instance.run_task_content_pages(5)
   Timer(60 * 60 * 12, median_cycle).start()
 
 
