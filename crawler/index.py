@@ -19,7 +19,9 @@ INTERVIEW_EXPERIENCE_FID = 145
 INTERNAL_REFERRAL_FID = 198
 COMPANY_PACKAGE_FID = 237
 COMPANY_INSIDE_FID = 287
-
+CAREER_EXPERT_FID = 98
+SYSTEM_DESIGN_FID = 323
+PROGRAM_INTRODUCTION_FID = 71
 
 def job_type(jobType):
   if jobType == u'全职':
@@ -48,9 +50,18 @@ def build_soup(url):
   content = result.content.decode('gbk', 'ignore').encode('utf-8')
   return BeautifulSoup(content, 'html.parser')
 
+def generate_soup_and_post_rows(url, forum_name=None):
+  soup = build_soup(url)
+  rows = soup.findAll('tbody', id=re.compile('^normalthread'))
+  post_rows = []
+  for row in rows:
+    post_rows.append(general_post_information(row, forum_name))
+  return rows, post_rows
 
-def general_post_information(row):
+def general_post_information(row, forum_name=None):
   post = {}
+  if forum_name is not None:
+    post['postType'] = forum_name
   title_link = row.find('a', {'class': 's xst'})
   date = row.find('td', {'class': 'by'}).find('span').find('span')
   if date:
@@ -73,14 +84,10 @@ class OnePointThreeAcres:
     self.db_posts = client.onePoint3Acres.posts
 
   def scrape_interview_experience_list_page(self, url, page_num):
-    soup = build_soup(url)
-    rows = soup.findAll('tbody', id=re.compile('^normalthread'))
-    for row in rows:
-      post = general_post_information(row)
-      post['postType'] = 'interview experience'
+    rows, post_rows = generate_soup_and_post_rows(url)
+    for row, post in zip(rows, post_rows):
+      post['postType'] = 'Interview Experience'
       detail = row.find('th').find('span')
-      if detail is None:
-        print post['title'], url
       if detail.has_attr('style'):
         if detail.find('font', {'color': '#666'}) is None:
           continue
@@ -98,21 +105,15 @@ class OnePointThreeAcres:
     print ("Finished interview experience list page", page_num)
 
   def scrape_internal_referral_list_page(self, url, page_num):
-    soup = build_soup(url)
-    rows = soup.findAll('tbody', id=re.compile('^normalthread'))
-    for row in rows:
-      post = general_post_information(row)
-      post['postType'] = 'referral'
+    rows, post_rows = generate_soup_and_post_rows(url, 'Referral')
+    for row, post in zip(rows, post_rows):
       post['companyName'] = row.find('font', {'color': '#00B2E8'}).get_text().lower().replace(" ", "")
       self.db_posts.update({'tid': post['tid']}, {'$set': post}, True)
     print ("Finished internal referral list page", page_num)
 
   def scrape_company_package_list_page(self, url, page_num):
-    soup = build_soup(url)
-    rows = soup.findAll('tbody', id=re.compile('^normalthread'))
-    for row in rows:
-      post = general_post_information(row)
-      post['postType'] = 'package'
+    rows, post_rows = generate_soup_and_post_rows(url, 'Package')
+    for row, post in zip(rows, post_rows):
       post['companyName'] = row.find('font', {'color': '#FF6600'}).get_text().lower().replace(" ", "")
       post['experience'] = row.find('font', {'color': '#00B2E8'}).get_text()
       detail = row.find('th').get_text()
@@ -123,11 +124,8 @@ class OnePointThreeAcres:
     print ("Finished company package list page", page_num)
 
   def scrape_company_inside_list_page(self, url, page_num):
-    soup = build_soup(url)
-    rows = soup.findAll('tbody', id=re.compile('^normalthread'))
-    for row in rows:
-      post = general_post_information(row)
-      post['postType'] = 'inside'
+    rows, post_rows = generate_soup_and_post_rows(url, 'Company Inside')
+    for row, post in zip(rows, post_rows):
       post['recommendation'] = row.find('font', {'color': '#FF6600'}).get_text()
       post['companyName'] = row.find('font', {'color': '#497b89'}).get_text().lower().replace(" ", "")
       post['experience'] = row.find('font', {'color': '#00B2E8'}).get_text()
@@ -138,6 +136,12 @@ class OnePointThreeAcres:
       self.db_posts.update({'tid': post['tid']}, {'$set': post}, True)
     print ("Finished company inside list page", page_num)
 
+  def scrape_standard_list_page(self, url, forum_name, page_num):
+    _, post_rows = generate_soup_and_post_rows(url, forum_name)
+    for post in post_rows:
+      self.db_posts.update({'tid': post['tid']}, {'$set': post}, True)
+    print ("Finished {} list page {}" % forum_name, page_num)
+
   def scrape_list_page(self, fid, url, page_num):
     if fid == INTERVIEW_EXPERIENCE_FID:
       self.scrape_interview_experience_list_page(url, page_num)
@@ -147,6 +151,12 @@ class OnePointThreeAcres:
       self.scrape_company_package_list_page(url, page_num)
     elif fid == COMPANY_INSIDE_FID:
       self.scrape_company_inside_list_page(url, page_num)
+    elif fid == CAREER_EXPERT_FID:
+      self.scrape_standard_list_page(url, 'Career Expert', page_num)
+    elif fid == SYSTEM_DESIGN_FID:
+      self.scrape_standard_list_page(url, 'System Design', page_num)
+    elif fid == PROGRAM_INTRODUCTION_FID:
+      self.scrape_standard_list_page(url, 'Program Introduction', page_num)
 
   def run_task_list_pages(self, num_page):  # per 1 hr for 1 page
     page_num = 1
@@ -154,7 +164,8 @@ class OnePointThreeAcres:
       page_urls = []
       i = 0
       while i < CONCURRENT and page_num <= num_page:
-        for fid in [INTERVIEW_EXPERIENCE_FID, INTERNAL_REFERRAL_FID, COMPANY_PACKAGE_FID, COMPANY_INSIDE_FID]:
+        for fid in [INTERVIEW_EXPERIENCE_FID, INTERNAL_REFERRAL_FID, COMPANY_PACKAGE_FID, COMPANY_INSIDE_FID,
+                    CAREER_EXPERT_FID, SYSTEM_DESIGN_FID, PROGRAM_INTRODUCTION_FID]:
           list_page = {}
           list_page['fid'] = fid
           list_page['url'] = LIST_PAGE_URL.format(fid, page_num)

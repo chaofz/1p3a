@@ -64,4 +64,4 @@ gulp.task('minify-js', ['js'], () => {
 gulp.task('dev', ['js:watch', 'sass:watch']);
 gulp.task('deploy', ['sass', 'js']);
 gulp.task('build', ['static', 'js', 'sass']);
-gulp.task('prod', ['minify-js', 'minify-css']);
+gulp.task('prod', ['build', 'minify-js', 'minify-css']);

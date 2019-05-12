@@ -221,7 +221,8 @@ body {
 }
 
 select {
-  height: 21px;
+  height: 25px;
+  width: 120px;
   vertical-align: bottom;
   &:focus {
     outline: none;

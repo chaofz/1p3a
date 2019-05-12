@@ -1,0 +1,6 @@
+#!/bin/sh
+scp crawler/*.py chao1:1p3a/crawler
+scp server/*.js chao1:1p3a/server
+scp client/*.html chao1:1p3a/client/*.html
+scp client/public/js/*.js chao1:1p3a/client/public/js
+scp client/public/css/*.css chao1:1p3a/client/public/css

@@ -46,7 +46,7 @@ export default class PostList extends React.Component {
       activeFreshOrSwitch, activeInterviewResult, activeOrder,
     } = this.props;
     const {bookmarks} = this.state;
-    console.log("refresh", bookmarks);
+    // console.log("refresh", bookmarks);
     return (
       <div className="project-list">
         <ul className="projects row">

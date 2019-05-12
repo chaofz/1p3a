@@ -16,14 +16,12 @@ export default class MainApp extends React.Component {
     super(props);
     const filter = new Map();
     filter.set('jobType', 'fulltime');
-    filter.set('freshOrSwitch', 'fresh');
     const clientID = AppModel.getClientId();
     this.state = {
       posts: [],
       filter,
       clientID,
       postPageOpen: !!this.props.params.id,
-      activeFreshOrSwitch: 'fresh',
       activeJobType: 'fulltime',
     };
   }
@@ -36,10 +34,10 @@ export default class MainApp extends React.Component {
     } else {
       filter.set(catName, itemName);
     }
-    // this.onClickPage({selected: 0});
 
     // console.log(filter.get('freshOrSwitch'));
     const cats = {
+      activePostType: filter.get('postType'),
       activeCompanyName: filter.get('companyName'),
       activeInterviewType: filter.get('interviewTypes'),
       activeSeekTime: filter.get('seekTime'),
@@ -144,10 +142,11 @@ export default class MainApp extends React.Component {
 
   render() {
     const {
-      posts, count, postsPerPage, showSignUp, content, activeCompanyName, activeInterviewType, activeSeekTime, activeJobType,
+      posts, count, postsPerPage, showSignUp, content, activePostType, activeCompanyName, activeInterviewType, activeSeekTime, activeJobType,
       activeFreshOrSwitch, activeInterviewResult, activeOrder, activeSearchQuery, activeSummary, activeBookmarks, postPageOpen, clientID, page
     } = this.state;
     const activeTags = {
+      activePostType,
       activeCompanyName,
       activeInterviewType,
       activeSeekTime,
@@ -158,6 +157,7 @@ export default class MainApp extends React.Component {
       activeSummary,
       activeBookmarks,
     };
+    console.log("activePostType", activePostType);
     return (
       <div id="main" onClick={this.onGlobalClick.bind(this)}>
         <div className="filter-area">
@@ -186,6 +186,7 @@ export default class MainApp extends React.Component {
               <input type="text" id="searchQueryInput" ref='searchQuery' />
             </form>
           </div>
+          {activePostType === 'Interview Experience' &&
           <div className="category">
             <span className="category-name">面试类别</span>
             <div className="space"></div>
@@ -193,14 +194,13 @@ export default class MainApp extends React.Component {
                   onClick={() => this.onTagClick('interviewTypes', 'oa')}>OA</span>
             <span className={`tag interviewType ${activeInterviewType === 'campus' ? 'selected' : ''}`}
                   onClick={() => this.onTagClick('interviewTypes', 'campus')}>Campus</span>
-          {/*</div>*/}
-          {/*<div>*/}
             <span className={`tag interviewType ${activeInterviewType === 'phone' ? 'selected' : ''}`}
                   onClick={() => this.onTagClick('interviewTypes', 'phone')}>电面</span>
             <span className={`tag interviewType ${activeInterviewType === 'onsite' ? 'selected' : ''}`}
                   onClick={() => this.onTagClick('interviewTypes', 'onsite')}>昂赛</span>
-          </div>
+          </div>}
           <hr/>
+          {activePostType === 'Interview Experience' &&
           <div className="row">
             <div className="category">
               <span className="category-name">应届跳槽</span>
@@ -216,21 +216,8 @@ export default class MainApp extends React.Component {
               <span className={`tag jobType ${activeJobType === 'intern' ? 'selected' : ''}`}
                     onClick={() => this.onTagClick('jobType', 'intern')}>实习</span>
             </div>
-            {/*<div className="category">*/}
-              {/*<span className="category-name">面试结果</span>*/}
-              {/*<span className={`tag interviewResult ${activeInterviewResult === 'pass' ? 'selected' : ''}`}*/}
-                    {/*onClick={() => this.onTagClick('interviewResult', 'pass')}>通过</span>*/}
-              {/*<span className={`tag interviewResult ${activeInterviewResult === 'fail' ? 'selected' : ''}`}*/}
-                    {/*onClick={() => this.onTagClick('interviewResult', 'fail')}>失败</span>*/}
-            {/*</div>*/}
-          </div>
-          {/*<div className="category">*/}
-          {/*<span className="category-name" id="seekTime">找工时间</span>*/}
-          {/*<select value={this.state.value} onChange={this.handleSeekTimeChange.bind(this)}>*/}
-          {/*{seekTimeOptions.map(seekTime => <option value={seekTime}>{seekTime}</option>)}*/}
-          {/*</select>*/}
-          {/*</div>*/}
-          <hr/>
+          </div>}
+          {activePostType === 'Interview Experience' && <hr/>}
           <div className="category">
             <span className="category-name">结果排序</span>
             {/*<span className={`tag order ${activeOrder === 'createdDate' ? 'selected' : ''}`}*/}

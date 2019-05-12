@@ -9,8 +9,8 @@ instance = OnePointThreeAcres()
 
 def full_base_setup(): # just run once
   print("Starting full base-term setup")
-  instance.run_task_list_pages(390)
-  instance.run_task_content_pages(390)
+  instance.run_task_list_pages(1000)
+  instance.run_task_content_pages(1000)
 
 def short_base_setup(): # just run once
   print("Starting short base-term setup")

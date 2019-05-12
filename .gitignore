@@ -7,3 +7,4 @@ server/ssl
 crawler/__pycache__
 crawler/*.pyc
 .idea
+upload

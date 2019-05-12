@@ -12,7 +12,7 @@ router.get('/bookmarks/:clientID', findUser, getBookmarks);
 router.post('/', findUser, changeBookmark);
 
 function showCompanyRank(req, res) {
-  const {type, start, end} = req.query;
+  const {postType, freshOrSwitch, type, start, end} = req.query;
   const match = {};
   if(start || end)
     match.createdDate = {}
@@ -20,9 +20,13 @@ function showCompanyRank(req, res) {
     match.createdDate = {$gt: new Date(start)};
   if (end)
     match.createdDate.$lt = new Date(end);
+  if (postType)
+    match.postType = postType;
   if (type)
     match.interviewTypes = type;
-  match.freshOrSwitch = 'fresh';
+  if (freshOrSwitch)
+    match.freshOrSwitch = freshOrSwitch;
+
   Post.aggregate([
     {$match: match},
     {$group: {"_id": "$companyName", "count": {$sum: 1}}},
@@ -91,7 +95,6 @@ function findUser(req, res, next) {
   User.findById(clientID, (err, user) => {
     if (user) {
       req.user = user;
-      console.log('findUser', clientID);
       next();
     } else {
       res.status(200).json({});
@@ -133,13 +136,20 @@ function showSortedPage(req, res) {
   if (summary)
     req.query['title'] = /.*总结|汇总|整理.*/;
 
-  if (postType !== 'interview experience') {
+  if (postType !== 'Interview Experience') {
     req.query.freshOrSwitch = undefined;
     req.query.jobType = undefined;
   }
 
+  if(postType === 'Company Inside' && companyName) {
+    req.query['companyName'] = new RegExp('.*' + companyName + '.*');
+  }
+  console.log(req.query['companyName'])
+
   if(searchQuery)
     req.query.$text = {$search: '"' + searchQuery + '"'};
+
+  console.log(req.query);
 
   const countQuery = Post.find(req.query).count((err, count) => {});
   const query = Post.find(req.query)
