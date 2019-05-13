@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd crawler
-python run.py quick
-cd ../server
-node server.js

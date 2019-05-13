@@ -32,13 +32,11 @@ http://app.chaofz.me/
   * 检测代码是否兼容 Node.js 11
   * 用 TypeScript 重写
 * Database
-  * 把 Mongo 换成 Postgres
-  * 添加 Migration
+  * 添加 Indexes
 * App level
   * 添加用户管理功能和personal settings
       * 持久化bookmarks
   * 若加入用户管理，需要转为HTTPS
-  * 添加其他显示其他论坛版块的功能
 
 ### Frontend
 * Language Level
@@ -54,4 +52,3 @@ http://app.chaofz.me/
 ### Crawler
 * 一亩三分地已经部分改版，需要改下爬虫
 * 爬评论 
-* 爬其他版块的内容，比如抖包袱

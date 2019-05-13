@@ -12,7 +12,7 @@ router.get('/bookmarks/:clientID', findUser, getBookmarks);
 router.post('/', findUser, changeBookmark);
 
 function showCompanyRank(req, res) {
-  const {postType, freshOrSwitch, type, start, end} = req.query;
+  const {postType, freshOrSwitch, stageType, start, end} = req.query;
   const match = {};
   if(start || end)
     match.createdDate = {}
@@ -22,10 +22,14 @@ function showCompanyRank(req, res) {
     match.createdDate.$lt = new Date(end);
   if (postType)
     match.postType = postType;
-  if (type)
-    match.interviewTypes = type;
+  if (stageType)
+    match.interviewTypes = stageType;
   if (freshOrSwitch)
     match.freshOrSwitch = freshOrSwitch;
+  if (postType === 'Interview Experience')
+    match.jobType = 'fulltime';
+
+  console.log(match);
 
   Post.aggregate([
     {$match: match},
@@ -123,36 +127,45 @@ function changeBookmark(req, res) {
 }
 
 function showSortedPage(req, res) {
-  let {order, page, summary, searchQuery, postType, companyName} = req.query;
-  req.query.order = undefined;
-  req.query.page = undefined;
-  req.query.clientID = undefined;
-  req.query.summary = undefined;
-  req.query.searchQuery = undefined;
+  let {order, page, summary, searchQuery, postType, companyName, interviewTypes, freshOrSwitch, jobType} = req.query;
+  const dbQuery = {};
   order = order || 'tid';
   let pageNum = page || 0;
   let skipCount = pageNum < 0 ? 0 : pageNum * POST_NUM;
 
   if (summary)
-    req.query['title'] = /.*总结|汇总|整理.*/;
+    dbQuery.title = /.*总结|汇总|整理.*/;
 
-  if (postType !== 'Interview Experience') {
-    req.query.freshOrSwitch = undefined;
-    req.query.jobType = undefined;
+  if (postType) {
+    dbQuery.postType = postType;
+    if (postType === 'Interview Experience') {
+      dbQuery.jobType = jobType;
+    }
   }
 
-  if(postType === 'Company Inside' && companyName) {
-    req.query['companyName'] = new RegExp('.*' + companyName + '.*');
+  if (companyName) {
+    dbQuery.companyName = companyName;
+    if(postType === 'Company Inside') {
+        dbQuery.companyName = new RegExp('.*' + companyName + '.*', "i");
+    }
   }
-  console.log(req.query['companyName'])
 
-  if(searchQuery)
-    req.query.$text = {$search: '"' + searchQuery + '"'};
+  if (interviewTypes) {
+    dbQuery.interviewTypes = interviewTypes;
+  }
+  if (freshOrSwitch) {
+    dbQuery.freshOrSwitch = freshOrSwitch;
+  }
 
-  console.log(req.query);
+  if(searchQuery) {
+    dbQuery.$text = {$search: '"' + searchQuery + '"'};
+//    dbQuery['title'] = new RegExp('.*' + searchQuery + '.*', "i");
+  }
 
-  const countQuery = Post.find(req.query).count((err, count) => {});
-  const query = Post.find(req.query)
+  console.log(dbQuery);
+
+  const countQuery = Post.find(dbQuery).count((err, count) => {});
+  const query = Post.find(dbQuery)
     .sort('-' + order)
     .skip(skipCount)
     .limit(POST_NUM);

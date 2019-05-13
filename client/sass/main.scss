@@ -2,17 +2,8 @@
 @import "variables";
 @import "global";
 @import "responsive";
-@import "reusable";
-@import "pages/navbar";
-@import "pages/settings";
-@import "pages/dashboard";
 @import "pages/post_list";
 @import "pages/post_page";
-@import "pages/users";
-@import "pages/search";
-@import "pages/simple_pages";
-
-
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -113,7 +104,10 @@ body {
         margin-right: 32px;
         margin-bottom: 2px;
       }
-
+      .postType.selected {
+        border: 1px solid #e59a5c;
+        background-color: #e59a5c;
+      }
       .companyName.selected {
         border: 1px solid $theme-primary;
         background-color: $theme-primary;

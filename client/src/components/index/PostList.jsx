@@ -42,7 +42,7 @@ export default class PostList extends React.Component {
 
   render() {
     const {
-      posts, count, postsPerPage, activeCompanyName, activeInterviewType, activeSeekTime, activeJobType,
+      posts, count, postsPerPage, activePostType, activeCompanyName, activeInterviewType, activeSeekTime, activeJobType,
       activeFreshOrSwitch, activeInterviewResult, activeOrder,
     } = this.props;
     const {bookmarks} = this.state;
@@ -65,9 +65,7 @@ export default class PostList extends React.Component {
                     <ul className="tags">
                       {post.createdDate.substring(0, 10)}
                       <span className="views">{post.views} views</span>
-                    </ul>
-                    {/*<ul className="tags">*/}
-                      {/*{!activeCompanyName && <li className="company-name">{post.companyName}</li>}*/}
+                      <li className="post-type">{post.postType}</li>
                       {/*/!*{!activeJobField && <li className="job-field">{post.jobField}</li>}*!/*/}
                       {/*{!activeJobType && <li className="job-type">{post.jobType}</li>}*/}
                       {/*{!activeInterviewType && <li className="job-source">{post.interviewTypes}</li>}*/}
@@ -75,7 +73,7 @@ export default class PostList extends React.Component {
                       {/*{!activeFreshOrSwitch && <li className="fresh-or-switch">{post.freshOrSwitch}</li>}*/}
                       {/*{!activeInterviewResult && <li className="interview-result">{post.interviewResult}</li>}*/}
                       {/*<span className="views">{post.views} views</span>*/}
-                    {/*</ul>*/}
+                    </ul>
                   </div>
                 </a>
               </li>);

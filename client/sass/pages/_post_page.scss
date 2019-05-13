@@ -88,7 +88,9 @@
     span {
       margin-right: 10px;
     }
-
+    .postType.selected {
+      color: #e59a5c;
+    }
     .companyName.selected {
       color: $theme-primary;
     }

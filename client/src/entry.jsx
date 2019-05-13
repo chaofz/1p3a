@@ -8,7 +8,7 @@ import Ranking from "./components/index/Ranking.jsx";
 const AppRouter = (
   <Router history={browserHistory}>
     <Route path="/" component={MainApp}>
-      <Route path="posts/:id" component={PostPage}/>
+       {/*<Route path="posts/:id" component={PostPage}/>*/}
     </Route>
     <Route path="/rank" component={Ranking} />
   </Router>

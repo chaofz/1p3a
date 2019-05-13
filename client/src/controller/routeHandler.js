@@ -9,7 +9,7 @@ const routeHandler = {
   redirectIfLoggedIn(nextState, replace) {
     if (localStorage.token) {
       replace({
-        pathname: '/dashboard',
+        pathname: '/',
         state: {nextPathname: nextState.location.pathname}
       });
     }

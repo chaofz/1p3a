@@ -68,30 +68,32 @@ export default class Ranking extends React.Component {
   }
 
   render() {
-    const {ranking} = this.state;
+    const {ranking, postType} = this.state;
     return (
       <div id="rank-page">
         <div className="container">
           <div className="filter">
             <select className="ranking-select" value={this.state.value} onChange={this.handlePostTypeSelectChange.bind(this)}>
-              <option value=''>Post Type</option>
+              <option value=''>== Post Type ==</option>
               <option value='Interview Experience'>Interview Experience</option>
               <option value='Company Inside'>Company Inside</option>
               <option value='Package'>Package</option>
               <option value='Referral'>Referral</option>
             </select>
+            {postType === 'Interview Experience'&&
             <select className="ranking-select" value={this.state.value} onChange={this.handleFreshOrSwitchSelectChange.bind(this)}>
-              <option value=''>Fresh/Switch</option>
+              <option value=''>== Fresh/Switch ==</option>
               <option value='fresh'>Fresh</option>
               <option value='switch'>Switch</option>
-            </select>
+            </select>}
+            {postType === 'Interview Experience'&&
             <select className="ranking-select" value={this.state.value} onChange={this.handleStageSelectChange.bind(this)}>
-              <option value=''>Interview Stage</option>
+              <option value=''>== Interview Stage ==</option>
               <option value='oa'>OA</option>
               <option value='campus'>Campus</option>
               <option value='phone'>Phone</option>
               <option value='onsite'>Onsite</option>
-            </select>
+            </select>}
             {/*<form onSubmit={this.handleDateSubmit.bind(this)}>*/}
             <input type="text" id="start" ref='start'
                    onKeyDown={this.handleDateSubmit.bind(this)}
@@ -105,7 +107,7 @@ export default class Ranking extends React.Component {
               ranking.map(company =>
                 <div className="item">
                   {company._id || 'N/A'}
-                  <div className="count"> {company.count}</div>
+                  <div className="count"><span>&nbsp;</span>{company.count}</div>
                 </div>
               )
             }

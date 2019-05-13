@@ -243,6 +243,7 @@ export default class MainApp extends React.Component {
           <div className="list">
             <div className="filters-row">
               <span className="col-head">Filters</span>
+              {activePostType && <span className="tag postType selected">{activePostType}</span>}
               {activeCompanyName && <span className="tag companyName selected">{activeCompanyName}</span>}
               {activeInterviewType && <span className="tag interviewType selected">{activeInterviewType}</span>}
               {activeSeekTime && <span className="tag seekTime selected">{activeSeekTime}</span>}
