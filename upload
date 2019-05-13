@@ -1,8 +1,8 @@
 #!/bin/sh
-scp crawler/*.py chao1:1p3a/crawler
-scp server/*.js chao1:1p3a/server
+scp crawler/*.py chao:1p3a/crawler
+scp server/*.js chao:1p3a/server
 cd client
 gulp minify-js
-scp public/js/*min.js chao1:1p3a/client/public/js
-scp public/css/*.css chao1:1p3a/client/public/css
+scp public/js/*min.js chao:1p3a/client/public/js
+scp public/css/*.css chao:1p3a/client/public/css
 cd ..

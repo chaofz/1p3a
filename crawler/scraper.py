@@ -133,6 +133,8 @@ class OnePointThreeAcresScraper:
       self.scrape_company_package_list_page(url, page_num)
     elif fid == COMPANY_INSIDE_FID:
       self.scrape_company_inside_list_page(url, page_num)
+    elif fid == JOB_SEEK_FID:
+      self.scrape_standard_list_page(url, 'Job Seek', page_num)
     elif fid == CAREER_EXPERT_FID:
       self.scrape_standard_list_page(url, 'Career Expert', page_num)
     elif fid == SYSTEM_DESIGN_FID:
