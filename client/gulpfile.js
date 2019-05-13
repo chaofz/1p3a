@@ -54,14 +54,14 @@ gulp.task('js:watch', () => {
     .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('minify-js', ['js'], () => {
+const minifyJs = () => {
   return gulp.src('public/js/bundle.js')
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('public/js'));
-});
+}
 
+gulp.task('minify-js', minifyJs);
+gulp.task('build-js', ['js'], minifyJs);
 gulp.task('dev', ['js:watch', 'sass:watch']);
-gulp.task('deploy', ['sass', 'js']);
-gulp.task('build', ['static', 'js', 'sass']);
 gulp.task('prod', ['build', 'minify-js', 'minify-css']);

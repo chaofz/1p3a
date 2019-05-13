@@ -1,5 +1,6 @@
 import sys
 import time
+from threading import Timer
 from scraper import OnePointThreeAcresScraper
 
 
@@ -13,7 +14,7 @@ def high_frequent_cycle():
 
 def median_frequent_cycle():
   scraper.run_list_pages_concurrently(10)
-  # scraper.run_task_content_pages(1)
+  # scraper.run_task_content_pages(10)
   Timer(60 * 60 * 12, median_frequent_cycle).start()
 
 

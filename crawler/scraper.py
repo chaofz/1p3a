@@ -96,7 +96,9 @@ class OnePointThreeAcresScraper:
   def scrape_company_package_list_page(self, url, page_num):
     rows, post_rows = generate_soup_and_post_rows(url, 'Package')
     for row, post in zip(rows, post_rows):
-      post['companyName'] = row.find('font', {'color': '#FF6600'}).get_text().lower().replace(" ", "")
+      company_span = row.find('font', {'color': '#FF6600'})
+      if company_span is not None:
+        post['companyName'] = company_span.get_text().lower().replace(" ", "")
       post['experience'] = row.find('font', {'color': '#00B2E8'}).get_text()
       detail = row.find('th').get_text()
       arrow_index = detail.rfind("->")
@@ -163,7 +165,7 @@ class OnePointThreeAcresScraper:
         [x.start() for x in threads]
         [x.join() for x in threads]
         time.sleep(SLEEP_DURATION)
-      print ('Finished a concurrent list page group')
+        print ('Finished a concurrent list page batch')
 
   def scrape_content_page(self, tid, url):
     result = requests.get(url)
